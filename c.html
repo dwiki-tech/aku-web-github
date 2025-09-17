@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Surat Untukmu</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: "Georgia", serif;
+    }
+
+    h1 {
+    color: #fff;
+    margin-top: 180px; /* tambah besar biar turun lagi */
+    margin-bottom: 20px;
+    }
+
+    p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+    margin-top: 40px; /* atur sesuai kebutuhan */
+    margin-bottom: 30px;
+    }
+
+
+    .letter {
+      background: url("8.jpeg") no-repeat center center;
+      background-size: cover;
+      padding: 40px;
+      min-height:350px; /* tinggi minimum biar lebih panjang */
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      text-align: center;
+      position: relative;
+      animation: fadeIn 1.5s ease-in-out;
+      color: #fff; /* teks jadi putih biar kontras */
+      
+    }
+
+    .letter-content {
+  margin-top: 300px; /* makin besar makin turun */
+}
+
+
+    .letter::before {
+      content: "💌";
+      font-size: 40px;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease forwards;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-style: italic;
+      color: #eee;
+    }
+
+    /* Container tombol sekarang di luar card */
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* Tombol umum */
+    .btn {
+      padding: 12px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    /* Tombol Iya */
+    .btn-yes {
+      background: linear-gradient(45deg, #25d366, #128c7e);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(37,211,102,0.7);
+    }
+    .btn-yes:hover {
+      background: #128c7e;
+      box-shadow: 0 0 20px rgba(37,211,102,1);
+      transform: scale(1.05);
+    }
+
+    /* Tombol Enggak */
+    .btn-no {
+      background: linear-gradient(45deg, #ff4b2b, #ff416c);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(255,65,108,0.7);
+      position: relative;
+    }
+    .btn-no:hover {
+      background: #e63e5a;
+      box-shadow: 0 0 20px rgba(255,65,108,1);
+    }
+
+    /* Animasi muncul */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Card hanya berisi teks -->
+  <div class="letter">
+  <div class="letter-content">
+    <h1>TASYA GALAK KAMU BALIK AN AGI NGA AKU</h1>
+  </div>
+</div>
+
+
+  <!-- Tombol di luar card -->
+  <div class="buttons">
+    <!-- Tombol Iya -->
+    <a href="https://wa.me/6285758048716?text=..." 
+       target="_blank" 
+       class="btn btn-yes">Iya 💚</a>
+
+    <!-- Tombol Enggak -->
+    <button class="btn btn-no" id="btnNo">Enggak ❌</button>
+  </div>
+
+  <script>
+    const btnNo = document.getElementById("btnNo");
+
+    btnNo.addEventListener("mouseover", () => {
+      // acak posisi tombol enggak
+      const x = Math.floor(Math.random() * 300) - 150; // kiri/kanan
+      const y = Math.floor(Math.random() * 200) - 100; // atas/bawah
+      btnNo.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
